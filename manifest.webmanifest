@@ -1,0 +1,24 @@
+{
+  "name": "J.A.R.V.I.S. Command Interface",
+  "short_name": "JARVIS",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#030a12",
+  "theme_color": "#061321",
+  "description": "A futuristic personal assistant prototype",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

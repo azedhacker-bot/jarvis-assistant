@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061321"><meta name="description" content="JARVIS personal AI assistant prototype">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<title>J.A.R.V.I.S. — Command Interface</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div><main class="app">
+<header><div><div class="eyebrow">STARK INDUSTRIES · PERSONAL SYSTEM</div><h1>J.A.R.V.I.S.</h1><p class="sub">JUST A RATHER VERY INTELLIGENT SYSTEM</p></div><div class="status"><i></i><span id="systemStatus">SYSTEM ONLINE</span><small id="clock">--:--:--</small></div></header>
+<section class="hero panel">
+ <div class="hero-top"><span>HOLOGRAPHIC CORE</span><span id="coreState">STANDBY</span></div>
+ <div class="holo-wrap"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="core"><div class="core-inner">J</div></div><div class="scanline"></div></div>
+ <h2 id="greeting">Good evening, Sir.</h2><p id="statusText">All systems standing by. Awaiting your command.</p>
+ <div class="controls"><button id="listenBtn" class="primary">◉ START VOICE</button><button id="stopBtn">■ STOP</button><button id="speakBtn">♪ VOICE: OFF</button></div>
+ <p class="hint">Voice recognition requires a supported browser and an internet connection. Keep this tab open while listening.</p>
+</section>
+<section class="stats">
+ <div class="panel stat"><span>CPU SIMULATION</span><b id="cpu">24%</b><div class="meter"><i id="cpuBar"></i></div></div>
+ <div class="panel stat"><span>MEMORY SIMULATION</span><b id="ram">42%</b><div class="meter"><i id="ramBar"></i></div></div>
+ <div class="panel stat"><span>NETWORK</span><b class="green">READY*</b><small>*Browser connection status</small></div>
+</section>
+<section class="columns">
+ <div class="panel terminal"><div class="section-head"><h3>INTELLIGENCE TERMINAL</h3><span class="live">● LIVE</span></div><div id="chat" class="chat"><div class="message bot"><b>JARVIS</b><p>Welcome. Your holographic interface is ready. Set a wake phrase below, then start voice recognition.</p></div></div><form id="chatForm"><input id="messageInput" autocomplete="off" placeholder="Type a command…"><button class="primary">SEND ↗</button></form></div>
+ <div class="panel settings"><div class="section-head"><h3>VOICE CONFIGURATION</h3><span class="live">CUSTOM</span></div><label for="wakePhrase">Your custom wake phrase</label><input id="wakePhrase" value="Hey Jarvis" maxlength="35"><p class="hint">Example: “Computer”, “Hello Assistant”, or “Hey Jarvis”. Say the phrase while voice listening is active.</p><button id="saveWake" class="wide">SAVE WAKE PHRASE</button><div class="divider"></div><div class="section-head"><h3>QUICK COMMANDS</h3></div><div class="quick"><button data-command="What time is it?">◷ TIME</button><button data-command="Tell me a fun fact">✧ FACT</button><button data-command="Tell me a joke">◇ JOKE</button><button data-command="Help">⌘ HELP</button></div></div>
+</section>
+<section class="columns lower">
+ <div class="panel"><div class="section-head"><h3>MISSION LOG</h3><span class="live">LOCAL</span></div><form id="taskForm" class="inline"><input id="taskInput" placeholder="Add a mission…"><button>＋</button></form><ul id="tasks"></ul></div>
+ <div class="panel"><div class="section-head"><h3>PERSONAL NOTES</h3><span class="live">LOCAL</span></div><textarea id="notes" placeholder="Your notes stay in this browser on this device…"></textarea><button id="saveNotes" class="wide">SAVE NOTES</button><p class="hint" id="noteStatus">Notes are stored locally in this browser.</p></div>
+</section>
+
+<section class="panel device-bridge">
+ <div class="section-head"><h3>DEVICE BRIDGE · SAFE MODE</h3><span class="live">USER-CONTROLLED</span></div>
+ <p class="hint">JARVIS can only use the specific permissions you grant. It cannot silently take over ChromeOS, run system commands, or access all your files.</p>
+ <div class="quick">
+  <button id="pickFile">▤ OPEN A FILE (READ ONLY)</button>
+  <button id="exportNotes">⇩ EXPORT MY NOTES</button>
+  <button id="copyNotes">▣ COPY MY NOTES</button>
+  <button id="notifyMe">♧ TEST NOTIFICATION</button>
+ </div>
+ <p id="deviceStatus" class="hint" aria-live="polite">No device permissions have been requested.</p>
+ <input id="filePicker" type="file" accept=".txt,.md,.csv,.json" hidden>
+</section>
+
+<footer>J.A.R.V.I.S. PROTOTYPE · CHROMEBOOK-READY WEB APP · V1.1</footer>
+</main><script src="app.js"></script>
+</body></html>
